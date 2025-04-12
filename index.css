@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #fefefe;
+  font-family: 'Caveat', cursive;
+  color: #222;
+  padding: 2rem;
+  max-width: 600px;
+  margin: auto;
+  font-size: 1.5rem;
+  animation: fadeIn 1s ease-in;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  border-bottom: 3px dashed #000;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  animation: bounceIn 0.8s ease;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  gap: 0.5rem;
+  animation: slideUp 0.7s ease;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 1.2rem;
+  border: 2px solid #000;
+  background: #fff;
+  border-radius: 8px;
+  outline: none;
+  box-shadow: 4px 4px 0 #000;
+  transition: all 0.2s ease;
+}
+
+input[type="text"]:focus {
+  background: #f7f7f7;
+  box-shadow: 6px 6px 0 #000;
+}
+
+button[type="submit"] {
+  background: #fffd7c;
+  color: #000;
+  border: 2px solid #000;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #000;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  transform: scale(1.05);
+  box-shadow: 6px 6px 0 #000;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #fff;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 2px solid #000;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease;
+  animation: fadeInSketch 0.5s ease;
+}
+
+li:hover {
+  transform: rotate(-1deg) scale(1.02);
+}
+
+.delete-btn {
+  background: #ff6f61;
+  border: 2px solid #000;
+  color: #000;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 3px 3px 0 #000;
+  transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #ff928a;
+  box-shadow: 5px 5px 0 #000;
+}
+
+/* 🌀 Sketchy Animations */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInSketch {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 🌙 Toggle Container */
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    animation: fadeIn 0.8s ease;
+  }
+  
+  .toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: 'Caveat', cursive;
+    color: #222;
+  }
+  
+  .toggle-slider {
+    width: 50px;
+    height: 28px;
+    background: #ddd;
+    border: 2px solid #000;
+    border-radius: 999px;
+    box-shadow: 2px 2px 0 #000;
+    position: relative;
+    transition: background 0.3s ease;
+  }
+  
+  .toggle-slider::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+  
+  input[type="checkbox"]:checked + .toggle-slider {
+    background: #444;
+  }
+  
+  input[type="checkbox"]:checked + .toggle-slider::before {
+    transform: translateX(22px);
+  }
+  
+  .toggle-text {
+    user-select: none;
+  }
+  
+  /* 🌒 Dark Theme */
+  body.dark-mode {
+    background: #121212;
+    color: #eee;
+  }
+  
+  body.dark-mode h1 {
+    border-bottom-color: #eee;
+    color: #fffd7c;
+  }
+  
+  body.dark-mode input[type="text"],
+  body.dark-mode li,
+  body.dark-mode button,
+  body.dark-mode .delete-btn {
+    background: #1e1e1e;
+    color: #eee;
+    border-color: #eee;
+    box-shadow: 4px 4px 0 #888;
+  }
+  
+  body.dark-mode .delete-btn {
+    background: #b23a48;
+  }
+  
+  body.dark-mode .delete-btn:hover {
+    background: #d15866;
+  }
+  
+  .toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    animation: fadeIn 0.8s ease;
+  }
+  
+  .toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: 'Caveat', cursive;
+    color: #222;
+    user-select: none;
+  }
+  
+  .toggle-label input[type="checkbox"] {
+    display: none; /* 🔥 Hides the checkbox */
+  }
+  
+  .toggle-slider {
+    width: 50px;
+    height: 28px;
+    background: #ddd;
+    border: 2px solid #000;
+    border-radius: 999px;
+    box-shadow: 2px 2px 0 #000;
+    position: relative;
+    transition: background 0.3s ease;
+  }
+  
+  .toggle-slider::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+  
+  /* When checked, animate the slider */
+  #themeToggle:checked + .toggle-slider {
+    background: #444;
+  }
+  
+  #themeToggle:checked + .toggle-slider::before {
+    transform: translateX(22px);
+  }
+  
